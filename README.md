@@ -18,13 +18,6 @@ Dependencies
 
 None
 
-Example Playbook
-----------------
-
-    - hosts: localhost
-      roles:
-         - role: ansible-role-neovim
-
 License
 -------
 
