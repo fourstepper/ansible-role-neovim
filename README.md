@@ -1,6 +1,8 @@
 ansible-role-neovim
 =========
 
+[![builds.sr.ht status](https://builds.sr.ht/~fourstepper/ansible-role-neovim.svg)](https://builds.sr.ht/~fourstepper/ansible-role-neovim?)
+
 This role installs and configures Neovim, including dependencies for coc-nvim to work
 
 Requirements
@@ -21,4 +23,4 @@ None
 License
 -------
 
-BSD
+MIT
