@@ -1,0 +1,67 @@
+---
+- name: Install prerequisites for a working neovim installation
+  package:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - nodejs
+    - npm
+  become: true
+
+- name: Make sure curl is installed
+  package:
+    name: curl
+    state: present
+  become: true
+
+- name: Install vim plug
+  shell:
+    cmd: >
+      curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim
+      --create-dirs
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    warn: false
+    creates: "$HOME/.local/share/nvim/site/autoload/plug.vim"
+
+- name: Install the jedi package for Python coc.nvim
+  pip:
+    name: jedi
+    state: present
+  become: true
+
+- name: Install YARN
+  package:
+    name: yarnpkg
+    state: present
+  become: true
+  when: |
+    ansible_facts['distribution'] == 'Ubuntu' or
+    ansible_facts['distribution'] == 'Fedora' or
+    ansible_facts['distribution'] == 'RedHat'
+
+- name: Install YARN
+  npm:
+    name: yarn
+    state: present
+    global: true
+  when: ansible_facts['distribution'] == 'Debian'
+
+- name: Install YARN
+  package:
+    name: yarn
+    state: present
+  become: true
+  when: ansible_facts['os_family'] == 'Alpine'
+
+- name: Install neovim
+  package:
+    name: neovim
+    state: present
+  become: true
+
+- name: Move the configuration files in place
+  copy:
+    src: files/nvim
+    dest: "$HOME/.config/"
+
+

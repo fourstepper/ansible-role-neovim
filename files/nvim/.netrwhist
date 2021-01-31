@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/robinopletal/Documents/Programming/IDC/play-webhost3/awx'
+let g:netrw_dirhist_5='/home/robinopletal/.kube'
+let g:netrw_dirhist_4='/home/robinopletal/Documents/Programming/Personal/ansible/Kubernetes-RPI-Cluster/setup/running-roles/roles/role-fanshim/molecule/default'
+let g:netrw_dirhist_3='/home/robinopletal/Documents/Programming/Personal/ansible/play-init/roles/role-init/tasks'
+let g:netrw_dirhist_2='/home/robinopletal/Documents/Programming/Personal/ansible/play-init/roles/role-init'
+let g:netrw_dirhist_1='/home/robinopletal/Documents/Programming/Personal/ansible/play-init/roles/role-init/tasks'
+let g:netrw_dirhist_0='/home/robinopletal/Documents/Programming/Personal/ansible/play-init/roles/role-init'
+let g:netrw_dirhist_9='/home/robinopletal/Documents/Programming/Personal/ansible/play-init/roles'
+let g:netrw_dirhist_8='/home/robinopletal/Documents/Programming/Personal/ansible/play-init/roles/role-ansibleuser/vars'
+let g:netrw_dirhist_7='/home/robinopletal/Documents/Programming/Personal/ansible/play-init/roles/role-ansibleuser'
