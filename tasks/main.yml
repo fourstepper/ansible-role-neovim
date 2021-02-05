@@ -51,6 +51,7 @@
     name: yarn
     state: present
     global: true
+  become: true
   when: ansible_facts['distribution'] == 'Debian'
 
 - name: Install YARN
