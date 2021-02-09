@@ -67,9 +67,15 @@
     state: present
   become: true
 
-- name: Move the configuration files in place
+- name: Move the configuration files in place from the global folder
+  copy:
+    src: "../../../config_files/nvim"
+    dest: "$HOME/.config/"
+  ignore_errors: true
+  register: global_config
+
+- name: Move the configuration files in place (if global fails)
   copy:
     src: files/nvim
     dest: "$HOME/.config/"
-
-
+  when: global_config.failed
